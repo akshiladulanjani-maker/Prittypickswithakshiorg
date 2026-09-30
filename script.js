@@ -513,10 +513,6 @@ if (year) {
 
 }
 
-loadProducts();
-
-observe();
-
 /* ========================= ARTICLES ========================= */
 
 function safeArticleHtml(html) {
@@ -607,3 +603,9 @@ $("#articleReader")?.addEventListener("click", event => {
 });
 
 
+
+
+/* ========================= START APP ========================= */
+
+loadProducts();
+observe();
