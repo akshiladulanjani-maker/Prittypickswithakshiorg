@@ -6,14 +6,16 @@ let activeArticleFilter = "all";
 
 async function loadProducts() {
   try {
-    const base = document.baseURI;
+    const base = document.baseURI || window.location.href;
     const productUrls = [
       new URL("data/products.json?v=20260930-8", base).href,
-      "/Prittypickswithakshiorg/data/products.json?v=20260930-8"
+      "/Prittypickswithakshiorg/data/products.json?v=20260930-9",
+      "https://raw.githubusercontent.com/akshiladulanjani-maker/Prittypickswithakshiorg/main/data/products.json?v=20260930-9"
     ];
     const articleUrls = [
       new URL("data/articles.json?v=20260930-8", base).href,
-      "/Prittypickswithakshiorg/data/articles.json?v=20260930-8"
+      "/Prittypickswithakshiorg/data/articles.json?v=20260930-9",
+      "https://raw.githubusercontent.com/akshiladulanjani-maker/Prittypickswithakshiorg/main/data/articles.json?v=20260930-9"
     ];
 
     async function loadJson(urls) {
