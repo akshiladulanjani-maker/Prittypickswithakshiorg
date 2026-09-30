@@ -213,6 +213,8 @@ const PRODUCTS = [
 /* ======================= END EDIT PRODUCTS ============================ */
 
 
+const isDemoLink = url => !url || url.includes("example.com");
+
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 
@@ -233,13 +235,16 @@ let search = "";
 
 function card(product) {
 
+  const demo = isDemoLink(product.affiliateUrl);
+  const destination = demo ? "#" : product.affiliateUrl;
+  const buttonLabel = demo ? "Link coming soon" : (product.buttonText || "Shop find");
+
   return `
     <article class="product-card reveal">
 
       <a
-        href="${escapeHtml(product.affiliateUrl)}"
-        target="_blank"
-        rel="noopener noreferrer sponsored nofollow"
+        href="${escapeHtml(destination)}"
+        ${demo ? 'aria-disabled="true" data-demo-link="true"' : 'target="_blank" rel="noopener noreferrer sponsored nofollow"'}
       >
 
         <div class="product-image">
@@ -282,11 +287,10 @@ function card(product) {
 
           <a
             class="shop-link"
-            href="${escapeHtml(product.affiliateUrl)}"
-            target="_blank"
-            rel="noopener noreferrer sponsored nofollow"
+            href="${escapeHtml(destination)}"
+            ${demo ? 'aria-disabled="true" data-demo-link="true"' : 'target="_blank" rel="noopener noreferrer sponsored nofollow"'}
           >
-            ${escapeHtml(product.buttonText || "Shop find")} →
+            ${escapeHtml(buttonLabel)} ${demo ? "" : "→"}
           </a>
 
         </div>
@@ -349,7 +353,17 @@ function render() {
   }
 
   observe();
+  bindDemoLinks();
 
+}
+
+function bindDemoLinks() {
+  $('#productGrid')?.querySelectorAll('[data-demo-link="true"]').forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      window.alert("This product link is being prepared. The real affiliate link will be added soon.");
+    });
+  });
 }
 
 
@@ -578,9 +592,8 @@ function renderMini(category) {
 
       <a
         class="mini-card"
-        href="${escapeHtml(product.affiliateUrl)}"
-        target="_blank"
-        rel="noopener noreferrer sponsored nofollow"
+        href="${escapeHtml(destination)}"
+        ${isDemoLink(product.affiliateUrl) ? 'aria-disabled="true" data-demo-link="true"' : 'target="_blank" rel="noopener noreferrer sponsored nofollow"'}
       >
 
         <img
