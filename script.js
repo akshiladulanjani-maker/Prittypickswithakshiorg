@@ -6,14 +6,37 @@ let activeArticleFilter = "all";
 
 async function loadProducts() {
   try {
-    const [productResponse, articleResponse] = await Promise.all([
-      fetch("/Prittypickswithakshiorg/data/products.json?v=20260930-7", { cache: "no-store" }),
-      fetch("/Prittypickswithakshiorg/data/articles.json?v=20260930-7", { cache: "no-store" })
-    ]);
-    if (!productResponse.ok) throw new Error("Could not load products");
-    PRODUCTS = await productResponse.json();
-    ARTICLES = articleResponse.ok ? await articleResponse.json() : [];
+    const base = document.baseURI;
+    const productUrls = [
+      new URL("data/products.json?v=20260930-8", base).href,
+      "/Prittypickswithakshiorg/data/products.json?v=20260930-8"
+    ];
+    const articleUrls = [
+      new URL("data/articles.json?v=20260930-8", base).href,
+      "/Prittypickswithakshiorg/data/articles.json?v=20260930-8"
+    ];
 
+    async function loadJson(urls) {
+      let lastError;
+      for (const url of urls) {
+        try {
+          const response = await fetch(url, { cache: "no-store" });
+          if (response.ok) return await response.json();
+          lastError = new Error("HTTP " + response.status + " for " + url);
+        } catch (error) {
+          lastError = error;
+        }
+      }
+      throw lastError || new Error("Could not load data");
+    }
+
+    PRODUCTS = await loadJson(productUrls);
+    try {
+      ARTICLES = await loadJson(articleUrls);
+    } catch (error) {
+      console.error("Pretty Picks articles could not be loaded.", error);
+      ARTICLES = [];
+    }
   } catch (error) {
     console.error("Pretty Picks product data could not be loaded.", error);
     PRODUCTS = [];
