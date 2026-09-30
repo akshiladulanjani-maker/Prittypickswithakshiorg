@@ -13,7 +13,6 @@ async function loadProducts() {
     if (!productResponse.ok) throw new Error("Could not load products");
     PRODUCTS = await productResponse.json();
     ARTICLES = articleResponse.ok ? await articleResponse.json() : [];
-    renderArticles();
 
   } catch (error) {
     console.error("Pretty Picks product data could not be loaded.", error);
