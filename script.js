@@ -19,6 +19,20 @@ async function loadProducts() {
 
 const isDemoLink = url => !url || url.includes("example.com");
 
+function getAffiliateLinks(product) {
+  const links = Array.isArray(product.affiliateLinks)
+    ? product.affiliateLinks.filter(link => link && link.url && !isDemoLink(link.url)).slice(0, 4)
+    : [];
+
+  if (links.length) return links;
+
+  if (product.affiliateUrl && !isDemoLink(product.affiliateUrl)) {
+    return [{ label: product.buttonText || "Shop find", url: product.affiliateUrl }];
+  }
+
+  return [];
+}
+
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
 
@@ -39,72 +53,53 @@ let search = "";
 
 function card(product) {
 
-  const demo = isDemoLink(product.affiliateUrl);
-  const destination = demo ? "#" : product.affiliateUrl;
-  const buttonLabel = demo ? "Link coming soon" : (product.buttonText || "Shop find");
+  const affiliateLinks = getAffiliateLinks(product);
+  const primaryUrl = affiliateLinks[0]?.url || "#";
+  const demo = affiliateLinks.length === 0;
+
+  const linksHtml = affiliateLinks.length
+    ? affiliateLinks.map(link => `
+        <a
+          class="shop-link"
+          href="${escapeHtml(link.url)}"
+          target="_blank"
+          rel="noopener noreferrer sponsored nofollow"
+        >
+          ${escapeHtml(link.label || "Shop now")} →
+        </a>
+      `).join("")
+    : `
+        <a class="shop-link" href="#" aria-disabled="true" data-demo-link="true">
+          Add affiliate link
+        </a>
+      `;
 
   return `
     <article class="product-card reveal">
-
       <a
-        href="${escapeHtml(destination)}"
+        href="${escapeHtml(primaryUrl)}"
         ${demo ? 'aria-disabled="true" data-demo-link="true"' : 'target="_blank" rel="noopener noreferrer sponsored nofollow"'}
       >
-
         <div class="product-image">
-
-          <img
-            loading="lazy"
-            src="${escapeHtml(product.image)}"
-            alt="${escapeHtml(product.name)}"
-          >
-
-          <span class="badge">
-            ${escapeHtml(product.badge || "Pretty pick")}
-          </span>
-
+          <img loading="lazy" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}">
+          <span class="badge">${escapeHtml(product.badge || "Pretty pick")}</span>
         </div>
-
       </a>
 
-
       <div class="product-info">
-
-        <span class="product-category">
-          ${escapeHtml(product.category)}
-        </span>
-
-        <h3>
-          ${escapeHtml(product.name)}
-        </h3>
-
-        <p>
-          ${escapeHtml(product.description)}
-        </p>
-
+        <span class="product-category">${escapeHtml(product.category)}</span>
+        <h3>${escapeHtml(product.name)}</h3>
+        <p>${escapeHtml(product.description)}</p>
 
         <div class="product-meta">
-
-          <span class="price">
-            ${escapeHtml(product.price)}
-          </span>
-
-          <a
-            class="shop-link"
-            href="${escapeHtml(destination)}"
-            ${demo ? 'aria-disabled="true" data-demo-link="true"' : 'target="_blank" rel="noopener noreferrer sponsored nofollow"'}
-          >
-            ${escapeHtml(buttonLabel)} ${demo ? "" : "→"}
-          </a>
-
+          <span class="price">${escapeHtml(product.price)}</span>
         </div>
 
+        <div class="affiliate-links">${linksHtml}</div>
       </div>
-
     </article>
   `;
 }
-
 
 /* ========================= FILTER PRODUCTS ========================= */
 
@@ -392,8 +387,9 @@ function renderMini(category) {
     .filter(product => product.category === category)
     .slice(0, 4)
     .map(product => {
-      const demo = isDemoLink(product.affiliateUrl);
-      const destination = demo ? "#" : product.affiliateUrl;
+      const affiliateLinks = getAffiliateLinks(product);
+      const demo = affiliateLinks.length === 0;
+      const destination = affiliateLinks[0]?.url || "#";
 
       return `
         <a
