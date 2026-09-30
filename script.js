@@ -7,8 +7,8 @@ let activeArticleFilter = "all";
 async function loadProducts() {
   try {
     const [productResponse, articleResponse] = await Promise.all([
-      fetch("data/products.json", { cache: "no-store" }),
-      fetch("data/articles.json", { cache: "no-store" })
+      fetch("data/products.json?v=20260930-2", { cache: "no-store" }),
+      fetch("data/articles.json?v=20260930-2", { cache: "no-store" })
     ]);
     if (!productResponse.ok) throw new Error("Could not load products");
     PRODUCTS = await productResponse.json();
