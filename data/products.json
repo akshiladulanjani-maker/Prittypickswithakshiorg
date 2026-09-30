@@ -4,12 +4,16 @@
     "name": "Blush Satin Slip Dress",
     "category": "fashion",
     "price": "$39.00",
-    "description": "An elegant satin piece with a soft, feminine finish.",
+    "description": "An elegant satin piece with a soft, feminine finish. ✨",
     "image": "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=85",
     "affiliateUrl": "https://example.com/your-affiliate-link-1",
     "buttonText": "Shop find",
     "badge": "Editor's pick",
-    "tags": ["dress", "fashion", "satin"]
+    "tags": [
+      "dress",
+      "fashion",
+      "satin"
+    ]
   },
   {
     "id": 2,
@@ -21,7 +25,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-2",
     "buttonText": "View find",
     "badge": "Trending",
-    "tags": ["bag", "accessories"]
+    "tags": [
+      "bag",
+      "accessories"
+    ]
   },
   {
     "id": 3,
@@ -33,7 +40,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-3",
     "buttonText": "Shop find",
     "badge": "Popular",
-    "tags": ["jewelry", "gold"]
+    "tags": [
+      "jewelry",
+      "gold"
+    ]
   },
   {
     "id": 4,
@@ -45,7 +55,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-4",
     "buttonText": "View find",
     "badge": "New",
-    "tags": ["cardigan", "knit"]
+    "tags": [
+      "cardigan",
+      "knit"
+    ]
   },
   {
     "id": 5,
@@ -57,7 +70,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-5",
     "buttonText": "Shop beauty",
     "badge": "Glow pick",
-    "tags": ["skincare", "serum"]
+    "tags": [
+      "skincare",
+      "serum"
+    ]
   },
   {
     "id": 6,
@@ -69,7 +85,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-6",
     "buttonText": "View beauty",
     "badge": "Bestseller",
-    "tags": ["makeup", "eyes"]
+    "tags": [
+      "makeup",
+      "eyes"
+    ]
   },
   {
     "id": 7,
@@ -81,7 +100,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-7",
     "buttonText": "Shop beauty",
     "badge": "Pretty pick",
-    "tags": ["lip", "makeup"]
+    "tags": [
+      "lip",
+      "makeup"
+    ]
   },
   {
     "id": 8,
@@ -93,7 +115,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-8",
     "buttonText": "View beauty",
     "badge": "Self-care",
-    "tags": ["skincare", "wellness"]
+    "tags": [
+      "skincare",
+      "wellness"
+    ]
   },
   {
     "id": 9,
@@ -105,7 +130,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-9",
     "buttonText": "Shop home",
     "badge": "Bedroom edit",
-    "tags": ["bedroom", "pillowcase"]
+    "tags": [
+      "bedroom",
+      "pillowcase"
+    ]
   },
   {
     "id": 10,
@@ -117,7 +145,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-10",
     "buttonText": "View home",
     "badge": "Cozy pick",
-    "tags": ["bedding", "bedroom"]
+    "tags": [
+      "bedding",
+      "bedroom"
+    ]
   },
   {
     "id": 11,
@@ -129,7 +160,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-11",
     "buttonText": "Shop home",
     "badge": "Decor pick",
-    "tags": ["decor", "vase"]
+    "tags": [
+      "decor",
+      "vase"
+    ]
   },
   {
     "id": 12,
@@ -141,7 +175,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-12",
     "buttonText": "View home",
     "badge": "Cozy",
-    "tags": ["candle", "decor"]
+    "tags": [
+      "candle",
+      "decor"
+    ]
   },
   {
     "id": 13,
@@ -153,7 +190,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-13",
     "buttonText": "Shop gift",
     "badge": "Gift idea",
-    "tags": ["gift", "self-care"]
+    "tags": [
+      "gift",
+      "self-care"
+    ]
   },
   {
     "id": 14,
@@ -165,7 +205,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-14",
     "buttonText": "View gift",
     "badge": "For her",
-    "tags": ["birthday", "beauty"]
+    "tags": [
+      "birthday",
+      "beauty"
+    ]
   },
   {
     "id": 15,
@@ -177,7 +220,10 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-15",
     "buttonText": "Shop lifestyle",
     "badge": "Desk pick",
-    "tags": ["journal", "stationery"]
+    "tags": [
+      "journal",
+      "stationery"
+    ]
   },
   {
     "id": 16,
@@ -189,6 +235,9 @@
     "affiliateUrl": "https://example.com/your-affiliate-link-16",
     "buttonText": "View lifestyle",
     "badge": "New",
-    "tags": ["planner", "wellness"]
+    "tags": [
+      "planner",
+      "wellness"
+    ]
   }
 ]
