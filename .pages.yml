@@ -20,11 +20,17 @@ content:
         label: Category
         type: select
         options:
-          - fashion
-          - beauty
-          - home
-          - gifts
-          - lifestyle
+          values:
+            - name: fashion
+              label: Fashion
+            - name: beauty
+              label: Beauty
+            - name: home
+              label: Home
+            - name: gifts
+              label: Gifts
+            - name: lifestyle
+              label: Lifestyle
         required: true
       - name: price
         label: Price
