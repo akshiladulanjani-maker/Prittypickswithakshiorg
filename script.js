@@ -19,10 +19,11 @@ async function loadProducts() {
     PRODUCTS = [];
   }
 
-  render();
-  renderMini("fashion");
-  renderArticles();
-  observe();
+  // Articles must render even if the product section has a problem.
+  try { renderArticles(); } catch (error) { console.error("Pretty Picks articles could not be rendered.", error); }
+  try { render(); } catch (error) { console.error("Pretty Picks products could not be rendered.", error); }
+  try { renderMini("fashion"); } catch (error) { console.error("Pretty Picks mini picks could not be rendered.", error); }
+  try { observe(); } catch (error) { console.error("Pretty Picks reveal animation could not be initialized.", error); }
 }
 
 const isDemoLink = url => !url || url.includes("example.com");
