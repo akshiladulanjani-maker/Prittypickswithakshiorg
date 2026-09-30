@@ -1,7 +1,28 @@
 /* ========================= EDIT PRODUCTS HERE ========================= */
 
 let PRODUCTS = [];
-let ARTICLES = [];
+let ARTICLES = [
+  {
+    id: 1,
+    title: "How to Create a Soft-Luxury Bedroom Without Spending a Fortune",
+    slug: "soft-luxury-bedroom-on-a-budget",
+    category: "home",
+    excerpt: "A few thoughtful changes can make an everyday bedroom feel calmer, warmer and more polished.",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
+    date: "2026-09-30",
+    body: "<p>A beautiful bedroom does not have to come from a complete makeover. The easiest way to create a soft-luxury feeling is to focus on texture, balance and a few details that make the room feel intentional.</p><h2>Start with a calm base</h2><p>Keep your main colours simple: warm white, cream, beige, muted blush or soft brown. A calm base makes even small decorative pieces feel more considered.</p><h2>Add texture before adding more colour</h2><p>Try a quilted throw, a soft pillowcase, a woven basket or a textured cushion. Layering different textures creates depth without making the room feel busy.</p><h2>Choose one or two beautiful details</h2><p>A ceramic vase, a warm lamp, a small tray or a framed print can become a focal point. You do not need many decorations; you need a few that work together.</p><h2>Keep the everyday things organised</h2><p>Luxury is also about how a space functions. Use small baskets, trays and simple storage to keep surfaces clear and make the room easier to live in.</p><p><strong>The Pretty Picks rule:</strong> before buying more, make the pieces you already own work better together.</p>"
+  },
+  {
+    id: 2,
+    title: "5 Simple Ways to Make Your Everyday Outfits Look More Polished",
+    slug: "make-everyday-outfits-look-polished",
+    category: "fashion",
+    excerpt: "You do not need a huge wardrobe to make simple outfits feel intentional and put-together.",
+    image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1200&q=85",
+    date: "2026-09-30",
+    body: "<p>Sometimes the difference between an ordinary outfit and a polished one is not another shopping trip. It is the small styling choices made after you get dressed.</p><h2>1. Keep the colour story simple</h2><p>Two or three colours that work together can instantly make an outfit feel more cohesive. Neutrals are especially easy to build around.</p><h2>2. Pay attention to proportions</h2><p>If one piece is loose, try balancing it with something more structured or fitted. Small changes in proportions can make basics look much more intentional.</p><h2>3. Add one finishing detail</h2><p>A watch, simple necklace, structured bag, belt or neat pair of shoes can make a basic outfit feel complete.</p><h2>4. Make sure the basics look cared for</h2><p>Clean shoes, wrinkle-free clothes and a tidy bag often make more difference than an expensive label.</p><h2>5. Repeat what works</h2><p>When you find an outfit combination you genuinely like, save it as a formula. Building a small collection of reliable outfit formulas makes getting dressed much easier.</p>"
+  }
+];
 let activeArticleFilter = "all";
 let dataLoadFailed = false;
 
