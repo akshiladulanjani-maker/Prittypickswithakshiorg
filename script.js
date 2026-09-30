@@ -7,8 +7,8 @@ let activeArticleFilter = "all";
 async function loadProducts() {
   try {
     const [productResponse, articleResponse] = await Promise.all([
-      fetch("data/products.json?v=20260930-2", { cache: "no-store" }),
-      fetch("data/articles.json?v=20260930-2", { cache: "no-store" })
+      fetch("data/products.json?v=20260930-3", { cache: "no-store" }),
+      fetch("data/articles.json?v=20260930-3", { cache: "no-store" })
     ]);
     if (!productResponse.ok) throw new Error("Could not load products");
     PRODUCTS = await productResponse.json();
@@ -576,3 +576,7 @@ $("#articleClose")?.addEventListener("click", closeArticle);
 $("#articleReader")?.addEventListener("click", event => {
   if (event.target.id === "articleReader") closeArticle();
 });
+
+
+/* ========================= FINAL INITIAL LOAD ========================= */
+loadProducts();
