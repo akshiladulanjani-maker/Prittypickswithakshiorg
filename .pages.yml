@@ -42,8 +42,24 @@ content:
         label: Product image URL
         type: string
       - name: affiliateUrl
-        label: Affiliate link
+        label: Legacy affiliate link
         type: string
+        hidden: true
+      - name: affiliateLinks
+        label: Affiliate links (up to 4)
+        type: object
+        list:
+          max: 4
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Button / store name
+            type: string
+          - name: url
+            label: Affiliate URL
+            type: string
       - name: buttonText
         label: Button text
         type: string
