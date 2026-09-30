@@ -8,14 +8,14 @@ async function loadProducts() {
   try {
     const base = document.baseURI || window.location.href;
     const productUrls = [
-      new URL("data/products.json?v=20260930-8", base).href,
-      "/Prittypickswithakshiorg/data/products.json?v=20260930-9",
-      "https://raw.githubusercontent.com/akshiladulanjani-maker/Prittypickswithakshiorg/main/data/products.json?v=20260930-9"
+      "https://raw.githubusercontent.com/akshiladulanjani-maker/Prittypickswithakshiorg/main/data/products.json?v=20260930-10",
+      new URL("data/products.json?v=20260930-10", base).href,
+      "/Prittypickswithakshiorg/data/products.json?v=20260930-10"
     ];
     const articleUrls = [
-      new URL("data/articles.json?v=20260930-8", base).href,
-      "/Prittypickswithakshiorg/data/articles.json?v=20260930-9",
-      "https://raw.githubusercontent.com/akshiladulanjani-maker/Prittypickswithakshiorg/main/data/articles.json?v=20260930-9"
+      "https://raw.githubusercontent.com/akshiladulanjani-maker/Prittypickswithakshiorg/main/data/articles.json?v=20260930-10",
+      new URL("data/articles.json?v=20260930-10", base).href,
+      "/Prittypickswithakshiorg/data/articles.json?v=20260930-10"
     ];
 
     async function loadJson(urls) {
