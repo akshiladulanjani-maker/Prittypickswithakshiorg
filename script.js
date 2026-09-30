@@ -488,7 +488,7 @@ loadProducts();
 
 observe();
 
-/* ========================= PRETTY EDIT ARTICLES ========================= */
+/* ========================= ARTICLES ========================= */
 
 function safeArticleHtml(html) {
   return String(html ?? "")
@@ -498,8 +498,8 @@ function safeArticleHtml(html) {
 
 function articleCard(article) {
   return `
-    <article class="article-card reveal">
-      <button class="article-card-button" data-article-slug="${escapeHtml(article.slug)}">
+    <article class="article-card">
+      <button type="button" class="article-card-button" data-article-slug="${escapeHtml(article.slug)}">
         <div class="article-cover">
           <img loading="lazy" src="${escapeHtml(article.image || "")}" alt="${escapeHtml(article.title)}">
           <span>${escapeHtml(article.category || "lifestyle")}</span>
@@ -541,7 +541,7 @@ function openArticle(slug) {
   if (!article || !reader || !content) return;
 
   content.innerHTML = `
-    <p class="eyebrow">${escapeHtml(article.category || "Pretty Edit")}</p>
+    <p class="eyebrow">${escapeHtml(article.category || "Articles")}</p>
     <h1>${escapeHtml(article.title)}</h1>
     <div class="article-date">${escapeHtml(article.date || "")}</div>
     <img class="article-hero-image" src="${escapeHtml(article.image || "")}" alt="${escapeHtml(article.title)}">
