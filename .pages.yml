@@ -1,0 +1,54 @@
+media: media
+
+content:
+  - name: products
+    label: Products & Affiliate Finds
+    type: file
+    path: data/products.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: ID
+        type: number
+        readonly: true
+      - name: name
+        label: Product name
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          - fashion
+          - beauty
+          - home
+          - gifts
+          - lifestyle
+        required: true
+      - name: price
+        label: Price
+        type: string
+      - name: description
+        label: Short description
+        type: text
+      - name: image
+        label: Product image URL
+        type: string
+      - name: affiliateUrl
+        label: Affiliate link
+        type: string
+      - name: buttonText
+        label: Button text
+        type: string
+      - name: badge
+        label: Badge
+        type: string
+      - name: tags
+        label: Search tags
+        type: string
+        list: true
+
+settings:
+  content:
+    merge: true
