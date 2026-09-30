@@ -1,12 +1,20 @@
 /* ========================= EDIT PRODUCTS HERE ========================= */
 
 let PRODUCTS = [];
+let ARTICLES = [];
+let activeArticleFilter = "all";
 
 async function loadProducts() {
   try {
-    const response = await fetch("data/products.json", { cache: "no-store" });
-    if (!response.ok) throw new Error("Could not load products");
-    PRODUCTS = await response.json();
+    const [productResponse, articleResponse] = await Promise.all([
+      fetch("data/products.json", { cache: "no-store" }),
+      fetch("data/articles.json", { cache: "no-store" })
+    ]);
+    if (!productResponse.ok) throw new Error("Could not load products");
+    PRODUCTS = await productResponse.json();
+    ARTICLES = articleResponse.ok ? await articleResponse.json() : [];
+    renderArticles();
+
   } catch (error) {
     console.error("Pretty Picks product data could not be loaded.", error);
     PRODUCTS = [];
@@ -14,6 +22,7 @@ async function loadProducts() {
 
   render();
   renderMini("fashion");
+  renderArticles();
   observe();
 }
 
@@ -479,3 +488,92 @@ if (year) {
 loadProducts();
 
 observe();
+
+/* ========================= PRETTY EDIT ARTICLES ========================= */
+
+function safeArticleHtml(html) {
+  return String(html ?? "")
+    .replace(/<script[\\s\\S]*?>[\\s\\S]*?<\\/script>/gi, "")
+    .replace(/ on[a-z]+\\s*=\\s*("[^"]*"|'[^']*')/gi, "");
+}
+
+function articleCard(article) {
+  return `
+    <article class="article-card reveal">
+      <button class="article-card-button" data-article-slug="${escapeHtml(article.slug)}">
+        <div class="article-cover">
+          <img loading="lazy" src="${escapeHtml(article.image || "")}" alt="${escapeHtml(article.title)}">
+          <span>${escapeHtml(article.category || "lifestyle")}</span>
+        </div>
+        <div class="article-info">
+          <small>${escapeHtml(article.date || "")}</small>
+          <h3>${escapeHtml(article.title)}</h3>
+          <p>${escapeHtml(article.excerpt)}</p>
+          <strong>Read article →</strong>
+        </div>
+      </button>
+    </article>
+  `;
+}
+
+function renderArticles() {
+  const grid = $("#articleGrid");
+  const empty = $("#articleEmpty");
+  if (!grid) return;
+
+  const list = ARTICLES
+    .filter(article => activeArticleFilter === "all" || article.category === activeArticleFilter)
+    .sort((a,b) => String(b.date || "").localeCompare(String(a.date || "")));
+
+  grid.innerHTML = list.map(articleCard).join("");
+  if (empty) empty.style.display = list.length ? "none" : "block";
+
+  grid.querySelectorAll("[data-article-slug]").forEach(button => {
+    button.addEventListener("click", () => openArticle(button.dataset.articleSlug));
+  });
+
+  observe();
+}
+
+function openArticle(slug) {
+  const article = ARTICLES.find(item => item.slug === slug);
+  const reader = $("#articleReader");
+  const content = $("#articleContent");
+  if (!article || !reader || !content) return;
+
+  content.innerHTML = `
+    <p class="eyebrow">${escapeHtml(article.category || "Pretty Edit")}</p>
+    <h1>${escapeHtml(article.title)}</h1>
+    <div class="article-date">${escapeHtml(article.date || "")}</div>
+    <img class="article-hero-image" src="${escapeHtml(article.image || "")}" alt="${escapeHtml(article.title)}">
+    <div class="article-body">${safeArticleHtml(article.body)}</div>
+  `;
+
+  reader.hidden = false;
+  document.body.classList.add("article-open");
+  reader.scrollTop = 0;
+  window.location.hash = "article-" + encodeURIComponent(slug);
+}
+
+function closeArticle() {
+  const reader = $("#articleReader");
+  if (reader) reader.hidden = true;
+  document.body.classList.remove("article-open");
+  if (window.location.hash.startsWith("#article-")) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  }
+}
+
+$$(".article-filter").forEach(button => {
+  button.addEventListener("click", () => {
+    activeArticleFilter = button.dataset.articleFilter;
+    $$(".article-filter").forEach(item => item.classList.toggle("active", item === button));
+    renderArticles();
+  });
+});
+
+$("#articleClose")?.addEventListener("click", closeArticle);
+
+$("#articleReader")?.addEventListener("click", event => {
+  if (event.target.id === "articleReader") closeArticle();
+});
