@@ -71,6 +71,65 @@ content:
         type: string
         list: true
 
+  - name: articles
+    label: The Pretty Edit — Articles
+    type: file
+    path: data/articles.json
+    format: json
+    list: true
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: id
+        label: ID
+        type: number
+        readonly: true
+      - name: title
+        label: Article title
+        type: string
+        required: true
+      - name: slug
+        label: URL slug
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - name: fashion
+              label: Fashion
+            - name: beauty
+              label: Beauty
+            - name: home
+              label: Home
+            - name: gifts
+              label: Gifts
+            - name: lifestyle
+              label: Lifestyle
+        required: true
+      - name: excerpt
+        label: Short description
+        type: text
+      - name: image
+        label: Cover image URL
+        type: string
+      - name: date
+        label: Publish date
+        type: date
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: body
+        label: Article content
+        type: rich-text
+        options:
+          format: html
+          switcher: false
+
 settings:
   content:
     merge: true
