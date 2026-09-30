@@ -13,6 +13,24 @@
       "dress",
       "fashion",
       "satin"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-1"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -28,6 +46,24 @@
     "tags": [
       "bag",
       "accessories"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-2"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -43,6 +79,24 @@
     "tags": [
       "jewelry",
       "gold"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-3"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -58,6 +112,24 @@
     "tags": [
       "cardigan",
       "knit"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-4"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -73,6 +145,24 @@
     "tags": [
       "skincare",
       "serum"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-5"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -88,6 +178,24 @@
     "tags": [
       "makeup",
       "eyes"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-6"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -103,6 +211,24 @@
     "tags": [
       "lip",
       "makeup"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-7"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -118,6 +244,24 @@
     "tags": [
       "skincare",
       "wellness"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-8"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -133,6 +277,24 @@
     "tags": [
       "bedroom",
       "pillowcase"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-9"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -148,6 +310,24 @@
     "tags": [
       "bedding",
       "bedroom"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-10"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -163,6 +343,24 @@
     "tags": [
       "decor",
       "vase"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-11"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -178,6 +376,24 @@
     "tags": [
       "candle",
       "decor"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-12"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -193,6 +409,24 @@
     "tags": [
       "gift",
       "self-care"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-13"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -208,6 +442,24 @@
     "tags": [
       "birthday",
       "beauty"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-14"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -223,6 +475,24 @@
     "tags": [
       "journal",
       "stationery"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-15"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   },
   {
@@ -238,6 +508,24 @@
     "tags": [
       "planner",
       "wellness"
+    ],
+    "affiliateLinks": [
+      {
+        "label": "Shop now",
+        "url": "https://example.com/your-affiliate-link-16"
+      },
+      {
+        "label": "Store 2",
+        "url": ""
+      },
+      {
+        "label": "Store 3",
+        "url": ""
+      },
+      {
+        "label": "Store 4",
+        "url": ""
+      }
     ]
   }
 ]
